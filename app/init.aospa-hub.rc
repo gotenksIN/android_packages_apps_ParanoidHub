@@ -1,0 +1,6 @@
+# SPDX-FileCopyrightText: The Paranoid Android Project
+# SPDX-License-Identifier: Apache-2.0
+
+on post-fs-data
+    # Keep OTA packages separate from /data/ota_package, which GmsCore may touch.
+    mkdir /data/hub_updates 0770 system cache encryption=Require

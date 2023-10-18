@@ -89,7 +89,8 @@ android_app {
     },
 
     required: [
-        "default-permissions_co.aospa.hub"
+        "default-permissions_co.aospa.hub",
+        "init.aospa-hub.rc",
     ],
 }
 
@@ -98,5 +99,13 @@ prebuilt_etc {
     system_ext_specific: true,
     sub_dir: "default-permissions",
     src: "default-permissions_co.aospa.hub.xml",
+    filename_from_src: true,
+}
+
+prebuilt_etc {
+    name: "init.aospa-hub.rc",
+    system_ext_specific: true,
+    sub_dir: "init",
+    src: "init.aospa-hub.rc",
     filename_from_src: true,
 }

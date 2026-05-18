@@ -1,10 +1,9 @@
 /*
  * SPDX-FileCopyrightText: The Android Open Source Project
  * SPDX-FileCopyrightText: The LineageOS Project
+ * SPDX-FileCopyrightText: The Paranoid Android Project
  * SPDX-License-Identifier: Apache-2.0
  */
-
-@file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
 package co.aospa.hub.ui
 
@@ -20,7 +19,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
-import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -75,7 +73,7 @@ fun CollapseBar(
         Spacer(Modifier.width(SettingsSpace.extraSmall4))
         Text(
             text = text,
-            style = MaterialTheme.typography.bodyLargeEmphasized,
+            style = MaterialTheme.typography.bodyLarge,
             color = MaterialTheme.colorScheme.onSurface,
         )
     }

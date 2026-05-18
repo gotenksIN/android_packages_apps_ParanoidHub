@@ -1,5 +1,6 @@
 /*
  * SPDX-FileCopyrightText: The LineageOS Project
+ * SPDX-FileCopyrightText: The Paranoid Android Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -43,7 +44,7 @@ fun DeviceInfoActionButtons(modifier: Modifier = Modifier) {
                     topEnd = CornerExtraSmall2.topEnd,
                 )
             )
-            .background(MaterialTheme.colorScheme.surfaceBright)
+            .background(MaterialTheme.colorScheme.surfaceContainer)
             .padding(SettingsDimension.itemPaddingAround),
         horizontalArrangement = Arrangement.spacedBy(small1),
     ) {

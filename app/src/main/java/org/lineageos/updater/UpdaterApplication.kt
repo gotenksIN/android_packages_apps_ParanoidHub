@@ -1,5 +1,6 @@
 /*
  * SPDX-FileCopyrightText: The LineageOS Project
+ * SPDX-FileCopyrightText: The Paranoid Android Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -50,8 +51,6 @@ class UpdaterApplication : Application() {
             override val pageProviderRepository = lazy {
                 SettingsPageProviderRepository(emptyList())
             }
-
-            override val isSpaExpressiveEnabled = true
         })
     }
 }

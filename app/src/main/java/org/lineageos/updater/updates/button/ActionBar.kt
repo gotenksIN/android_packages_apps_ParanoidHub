@@ -1,5 +1,6 @@
 /*
  * SPDX-FileCopyrightText: The LineageOS Project
+ * SPDX-FileCopyrightText: The Paranoid Android Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -14,12 +15,9 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Pause
 import androidx.compose.material.icons.outlined.PlayArrow
-import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.FilledIconButton
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -33,7 +31,6 @@ import com.android.settingslib.spa.framework.theme.SettingsTheme
 import com.android.settingslib.spa.widget.scaffold.MoreOptionsAction
 import com.android.settingslib.spa.widget.scaffold.MoreOptionsScope
 
-@OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 fun ActionBar(
     buttons: List<ActionBarButton>,
@@ -50,7 +47,6 @@ fun ActionBar(
             when (button) {
                 is ActionBarButton.Tonal -> FilledTonalButton(
                     onClick = button.onClick,
-                    shapes = ButtonDefaults.shapes(),
                     enabled = button.enabled,
                 ) {
                     Text(button.text)
@@ -58,7 +54,6 @@ fun ActionBar(
 
                 is ActionBarButton.Outlined -> OutlinedButton(
                     onClick = button.onClick,
-                    shapes = ButtonDefaults.shapes(),
                     enabled = button.enabled,
                 ) {
                     Text(button.text)
@@ -66,7 +61,6 @@ fun ActionBar(
 
                 is ActionBarButton.Icon -> FilledIconButton(
                     onClick = button.onClick,
-                    shapes = IconButtonDefaults.shapes(),
                     enabled = button.enabled,
                 ) {
                     Icon(

@@ -18,7 +18,6 @@ import androidx.compose.material.icons.outlined.Archive
 import androidx.compose.material.icons.outlined.CloudDownload
 import androidx.compose.material.icons.outlined.Pause
 import androidx.compose.material.icons.outlined.PlayArrow
-import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.LocalContentColor
@@ -48,7 +47,6 @@ import co.aospa.hub.updates.button.ActionBarButton
 import co.aospa.hub.updates.state.ProgressState
 import co.aospa.hub.updates.state.UpdateItemState
 
-@OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 fun UpdateItem(
     state: UpdateItemState,
@@ -62,7 +60,7 @@ fun UpdateItem(
         modifier = modifier
             .fillMaxWidth()
             .clip(SettingsShape.CornerExtraSmall2)
-            .background(MaterialTheme.colorScheme.surfaceBright)
+            .background(MaterialTheme.colorScheme.surfaceContainer)
     ) {
         key(state.downloadId) {
             Preference(model = object : PreferenceModel {

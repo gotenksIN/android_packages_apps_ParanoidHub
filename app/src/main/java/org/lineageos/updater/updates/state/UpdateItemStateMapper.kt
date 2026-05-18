@@ -1,5 +1,6 @@
 /*
  * SPDX-FileCopyrightText: The LineageOS Project
+ * SPDX-FileCopyrightText: The Paranoid Android Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -156,10 +157,7 @@ class UpdateItemStateMapper(
                 FormatStyle.LONG,
                 update.timestamp,
             ),
-            buildVersion = context.getString(
-                R.string.list_build_version,
-                update.version,
-            ),
+            buildVersion = update.displayVersion,
             status = state.titleRes?.let { context.getString(it) } ?: "",
             fileSize = Formatter.formatShortFileSize(context, update.fileSize),
             progress = progress,

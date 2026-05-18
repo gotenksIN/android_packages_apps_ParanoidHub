@@ -1,5 +1,6 @@
 /*
  * SPDX-FileCopyrightText: The LineageOS Project
+ * SPDX-FileCopyrightText: The Paranoid Android Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -24,6 +25,17 @@ data class Update(
     val type: String? = null,
     val version: String = "",
 ) {
+    val displayVersion: String
+        get() {
+            val parts = downloadId.split('-')
+            if (parts.size >= 3) {
+                return parts.joinToString(" ") { part ->
+                    part.replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }
+                }
+            }
+            return version
+        }
+
     fun withAvailableOnline(v: Boolean) = copy(isAvailableOnline = v)
     fun withDownloadId(v: String) = copy(downloadId = v)
     fun withDownloadUrl(v: String?) = copy(downloadUrl = v)

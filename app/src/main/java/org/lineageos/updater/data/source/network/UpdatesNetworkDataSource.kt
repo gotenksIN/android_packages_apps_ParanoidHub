@@ -1,5 +1,6 @@
 /*
  * SPDX-FileCopyrightText: The LineageOS Project
+ * SPDX-FileCopyrightText: The Paranoid Android Project
  * SPDX-License-Identifier: Apache-2.0
  */
 package co.aospa.hub.data.source.network
@@ -46,9 +47,8 @@ class UpdatesNetworkDataSource(private val context: Context) {
             }
 
             val contentType = response.body?.contentType()
-            if (contentType == null ||
-                contentType.type != "application" ||
-                contentType.subtype != "json"
+            if (contentType == null || contentType.type != "text" ||
+                contentType.subtype != "plain"
             ) {
                 throw IOException("Unexpected content type: $contentType")
             }
@@ -57,7 +57,7 @@ class UpdatesNetworkDataSource(private val context: Context) {
             body.bytes()
         }
 
-        return Json.decodeFromString<NetworkUpdateResponse>(
+        return Json { ignoreUnknownKeys = true }.decodeFromString<NetworkUpdateResponse>(
             bytes.decodeToString()
         ).updates
     }

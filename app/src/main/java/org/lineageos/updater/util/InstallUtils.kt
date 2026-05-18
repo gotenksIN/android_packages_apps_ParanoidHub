@@ -1,5 +1,6 @@
 /*
  * SPDX-FileCopyrightText: The LineageOS Project
+ * SPDX-FileCopyrightText: The Paranoid Android Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -24,13 +25,13 @@ object InstallUtils {
 
     @JvmStatic
     fun getBlockedReason(update: Update) = when {
-        !DeviceInfoUtils.isDowngradingAllowed
-                && update.timestamp <= DeviceInfoUtils.buildDateTimestamp
+        !DeviceInfoUtils.isDowngradingAllowed && !Utils.isUpdateNewer(
+                update.timestamp,
+                update.version,
+                DeviceInfoUtils.buildDateTimestamp,
+                DeviceInfoUtils.buildVersionIncremental,
+            )
             -> BlockedReason.DOWNGRADE
-
-        !Utils.compareVersions(
-            update.version, DeviceInfoUtils.buildVersion, DeviceInfoUtils.isMajorUpdateAllowed
-        ) -> BlockedReason.VERSION_UNSUPPORTED
 
         else -> BlockedReason.NONE
     }

@@ -1,5 +1,6 @@
 /*
  * SPDX-FileCopyrightText: The LineageOS Project
+ * SPDX-FileCopyrightText: The Paranoid Android Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -11,6 +12,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.SerializationException
 import co.aospa.hub.data.source.local.UpdatesLocalDataSource
+import co.aospa.hub.data.source.network.NetworkUpdate
 import co.aospa.hub.data.source.network.UpdatesNetworkDataSource
 import co.aospa.hub.data.source.network.toUpdate
 import co.aospa.hub.deviceinfo.DeviceInfoUtils
@@ -47,7 +49,7 @@ class UpdatesRepository(
         }.associateBy { it.downloadId }
 
         val networkUpdates = withContext(Dispatchers.IO) {
-            networkDataSource.fetchUpdates().map { it.toUpdate() }.filter { filterUpdates(it) }
+            networkDataSource.fetchUpdates().filter { filterUpdates(it) }.map { it.toUpdate() }
         }
 
         val networkIds = networkUpdates.map { it.downloadId }.toSet()
@@ -81,29 +83,20 @@ class UpdatesRepository(
         return System.currentTimeMillis()
     }
 
-    private fun filterUpdates(update: Update): Boolean {
-        val isCurrentBuild = update.timestamp == DeviceInfoUtils.buildDateTimestamp
-        val isOlderBuild = update.timestamp < DeviceInfoUtils.buildDateTimestamp
-
-        if (!DeviceInfoUtils.isDowngradingAllowed && (isOlderBuild || isCurrentBuild)) {
+    private fun filterUpdates(update: NetworkUpdate): Boolean {
+        if (!DeviceInfoUtils.isDowngradingAllowed && !Utils.isUpdateNewer(
+                update.timestamp.toLong(),
+                update.version,
+                update.androidVersion,
+                DeviceInfoUtils.buildDateTimestamp,
+                DeviceInfoUtils.buildVersionIncremental,
+                DeviceInfoUtils.androidVersion,
+            )
+        ) {
             Log.d(TAG, "${update.name} is not newer than the current build")
             return false
         }
 
-        if (!Utils.compareVersions(
-                update.version,
-                DeviceInfoUtils.buildVersion,
-                DeviceInfoUtils.isMajorUpdateAllowed,
-            )
-        ) {
-            Log.d(TAG, "${update.name} is older than current Android version")
-            return false
-        }
-
-        if (!update.type.equals(DeviceInfoUtils.releaseType, ignoreCase = true)) {
-            Log.d(TAG, "${update.name} has type ${update.type}")
-            return false
-        }
         return true
     }
 }

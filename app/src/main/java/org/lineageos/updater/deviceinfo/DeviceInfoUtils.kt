@@ -1,5 +1,6 @@
 /*
  * SPDX-FileCopyrightText: The LineageOS Project
+ * SPDX-FileCopyrightText: The Paranoid Android Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -12,15 +13,14 @@ import com.android.settingslib.DeviceInfoUtils as SettingsLibDeviceInfoUtils
 object DeviceInfoUtils : SettingsLibDeviceInfoUtils() {
 
     private const val PROP_AB_DEVICE = "ro.build.ab_update"
-    private const val PROP_ALLOW_MAJOR_UPGRADES = "lineage.updater.allow_major_upgrades"
     private const val PROP_BUILD_DATE = "ro.build.date.utc"
-    private const val PROP_BUILD_VERSION = "ro.lineage.build.version"
-    private const val PROP_BUILD_VERSION_INCREMENTAL = "ro.build.version.incremental"
-    private const val PROP_DEVICE = "ro.lineage.device"
+    private const val PROP_BUILD_VERSION = "ro.aospa.version.major"
+    private const val PROP_BUILD_VERSION_INCREMENTAL = "ro.aospa.version.minor"
+    private const val PROP_DEVICE = "ro.aospa.device"
     private const val PROP_NEXT_DEVICE = "ro.updater.next_device"
-    private const val PROP_RELEASE_TYPE = "ro.lineage.releasetype"
-    private const val PROP_UPDATER_ALLOW_DOWNGRADING = "lineage.updater.allow_downgrading"
-    private const val PROP_UPDATER_URI = "lineage.updater.uri"
+    private const val PROP_RELEASE_TYPE = "ro.aospa.build.variant"
+    private const val PROP_UPDATER_ALLOW_DOWNGRADING = "aospa.updater.allow_downgrading"
+    private const val PROP_UPDATER_URI = "aospa.updater.uri"
     private const val PROP_UPDATE_RECOVERY = "persist.vendor.recovery_update"
 
     // Read-only
@@ -50,10 +50,6 @@ object DeviceInfoUtils : SettingsLibDeviceInfoUtils() {
     @JvmStatic
     val isDowngradingAllowed: Boolean
         get() = SystemProperties.getBoolean(PROP_UPDATER_ALLOW_DOWNGRADING, false)
-
-    @JvmStatic
-    val isMajorUpdateAllowed: Boolean
-        get() = SystemProperties.getBoolean(PROP_ALLOW_MAJOR_UPGRADES, false)
 
     @JvmStatic
     var isRecoveryUpdateEnabled: Boolean

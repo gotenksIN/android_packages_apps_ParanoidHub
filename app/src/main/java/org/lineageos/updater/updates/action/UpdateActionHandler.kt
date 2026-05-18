@@ -1,5 +1,6 @@
 /*
  * SPDX-FileCopyrightText: The LineageOS Project
+ * SPDX-FileCopyrightText: The Paranoid Android Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -109,11 +110,7 @@ class UpdateActionHandler(
                     FormatStyle.MEDIUM,
                     update.timestamp,
                 )
-                val buildInfoText = activity.getString(
-                    R.string.list_build_version_date,
-                    update.version,
-                    buildDate,
-                )
+                val buildInfoText = "${update.displayVersion} - $buildDate"
                 showDialog(
                     AlertDialogState(
                         title = activity.getString(R.string.apply_update_dialog_title),

@@ -1,5 +1,6 @@
 /*
  * SPDX-FileCopyrightText: The LineageOS Project
+ * SPDX-FileCopyrightText: The Paranoid Android Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -223,7 +224,7 @@ private fun UpdateItemIdleCollapsedPreview() {
             state = UpdateItemState(
                 downloadId = "preview",
                 buildDate = "April 27, 2026",
-                buildVersion = "LineageOS 23.2",
+                buildVersion = "Paranoid Android Beryl",
                 status = "",
                 isLocal = false,
                 fileSize = "1.1 GB",
@@ -254,7 +255,7 @@ private fun UpdateItemIdleExpandedPreview() {
             state = UpdateItemState(
                 downloadId = "preview",
                 buildDate = "April 27, 2026",
-                buildVersion = "LineageOS 23.2",
+                buildVersion = "Paranoid Android Beryl",
                 status = "",
                 isLocal = false,
                 fileSize = "1.1 GB",
@@ -285,7 +286,7 @@ private fun UpdateItemDownloadingPreview() {
             state = UpdateItemState(
                 downloadId = "preview",
                 buildDate = "April 27, 2026",
-                buildVersion = "LineageOS 23.2",
+                buildVersion = "Paranoid Android Beryl",
                 status = "Downloading",
                 isLocal = false,
                 fileSize = "1.1 GB",

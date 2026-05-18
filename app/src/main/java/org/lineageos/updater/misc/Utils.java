@@ -1,5 +1,6 @@
 /*
  * SPDX-FileCopyrightText: The LineageOS Project
+ * SPDX-FileCopyrightText: The Paranoid Android Project
  * SPDX-License-Identifier: Apache-2.0
  */
 package co.aospa.hub.misc;
@@ -39,18 +40,39 @@ public class Utils {
         return new File(context.getString(R.string.download_path));
     }
 
-    public static boolean compareVersions(String a, String b, boolean allowMajorUpgrades) {
+    public static boolean isUpdateNewer(long updateTimestamp, String updateVersionCode,
+            long currentTimestamp, String currentVersionCode) {
+        if (updateTimestamp != currentTimestamp) {
+            return updateTimestamp > currentTimestamp;
+        }
+
         try {
-            int majorA = Integer.parseInt(a.split("\\.")[0]);
-            int minorA = Integer.parseInt(a.split("\\.")[1]);
+            return Float.parseFloat(updateVersionCode) > Float.parseFloat(currentVersionCode);
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
 
-            int majorB = Integer.parseInt(b.split("\\.")[0]);
-            int minorB = Integer.parseInt(b.split("\\.")[1]);
+    public static boolean isUpdateNewer(long updateTimestamp, String updateVersionCode,
+            String updateAndroidVersion, long currentTimestamp, String currentVersionCode,
+            String currentAndroidVersion) {
+        try {
+            float updateAndroid = Float.parseFloat(updateAndroidVersion);
+            float currentAndroid = Float.parseFloat(currentAndroidVersion);
+            if (updateAndroid != currentAndroid) {
+                return updateAndroid > currentAndroid;
+            }
+        } catch (NumberFormatException e) {
+            return false;
+        }
 
-            // Return early and allow if we allow major version upgrades
-            return (allowMajorUpgrades && majorA > majorB)
-                    || (majorA == majorB && minorA >= minorB);
-        } catch (ArrayIndexOutOfBoundsException | NumberFormatException e) {
+        if (updateTimestamp > currentTimestamp) {
+            return true;
+        }
+
+        try {
+            return Float.parseFloat(updateVersionCode) > Float.parseFloat(currentVersionCode);
+        } catch (NumberFormatException e) {
             return false;
         }
     }

@@ -59,7 +59,7 @@ fun UpdateItem(
     Column(
         modifier = modifier
             .fillMaxWidth()
-            .clip(SettingsShape.CornerExtraSmall2)
+            .clip(SettingsShape.CornerExtraSmall)
             .background(MaterialTheme.colorScheme.surfaceContainer)
     ) {
         key(state.downloadId) {

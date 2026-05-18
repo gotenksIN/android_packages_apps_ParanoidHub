@@ -1,10 +1,12 @@
 /*
  * SPDX-FileCopyrightText: The LineageOS Project
+ * SPDX-FileCopyrightText: The Paranoid Android Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
 package co.aospa.hub.updates.action
 
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -29,7 +31,12 @@ fun UpdateActionDialog(
 ) {
     SettingsAlertDialogWithIcon(
         onDismissRequest = onDismiss,
-        icon = ImageVector.vectorResource(R.drawable.ic_notification),
+        icon = {
+            Icon(
+                imageVector = ImageVector.vectorResource(R.drawable.ic_notification),
+                contentDescription = null,
+            )
+        },
         confirmButton = AlertDialogButton(text = stringResource(android.R.string.ok)) {
             onDismiss()
             dialog.onConfirm()

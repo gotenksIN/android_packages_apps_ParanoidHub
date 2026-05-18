@@ -1,5 +1,6 @@
 /*
  * SPDX-FileCopyrightText: The LineageOS Project
+ * SPDX-FileCopyrightText: The Paranoid Android Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -42,7 +43,6 @@ import androidx.compose.ui.unit.em
 import com.android.settingslib.spa.debug.UiModePreviews
 import com.android.settingslib.spa.framework.theme.SettingsDimension
 import com.android.settingslib.spa.framework.theme.SettingsShape.CornerExtraLarge1
-import com.android.settingslib.spa.framework.theme.SettingsSpace
 import com.android.settingslib.spa.framework.theme.SettingsTheme
 import co.aospa.hub.R
 import kotlin.math.max
@@ -255,7 +255,7 @@ fun UpdaterCard(
                     )
                 }
 
-                Spacer(modifier = Modifier.height(SettingsSpace.medium5))
+                Spacer(modifier = Modifier.height(SettingsDimension.paddingExtraLarge))
 
                 Row(
                     modifier = Modifier
@@ -322,7 +322,7 @@ private fun InfoColumn(
 ) {
     Column(
         modifier = modifier,
-        verticalArrangement = Arrangement.spacedBy(SettingsSpace.extraSmall2),
+        verticalArrangement = Arrangement.spacedBy(SettingsDimension.paddingExtraSmall),
     ) {
         Text(
             text = label,

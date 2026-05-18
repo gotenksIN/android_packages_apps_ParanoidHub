@@ -28,7 +28,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import com.android.settingslib.spa.debug.UiModePreviews
 import com.android.settingslib.spa.framework.theme.SettingsDimension
-import com.android.settingslib.spa.framework.theme.SettingsSpace
 import com.android.settingslib.spa.framework.theme.SettingsTheme
 import co.aospa.hub.R
 
@@ -55,10 +54,10 @@ fun CollapseBar(
             .fillMaxWidth()
             .clickable { onExpandedChange(!expanded) }
             .padding(
-                top = SettingsSpace.extraSmall4,
-                bottom = SettingsSpace.small1,
-                start = SettingsSpace.small4,
-                end = SettingsSpace.small4,
+                top = SettingsDimension.paddingExtraSmall6,
+                bottom = SettingsDimension.paddingLarge,
+                start = SettingsDimension.paddingExtraLarge,
+                end = SettingsDimension.paddingExtraLarge,
             ),
     ) {
         Icon(
@@ -70,7 +69,7 @@ fun CollapseBar(
                 .clip(CircleShape)
                 .background(MaterialTheme.colorScheme.surfaceContainerHighest),
         )
-        Spacer(Modifier.width(SettingsSpace.extraSmall4))
+        Spacer(Modifier.width(SettingsDimension.paddingExtraSmall6))
         Text(
             text = text,
             style = MaterialTheme.typography.bodyLarge,

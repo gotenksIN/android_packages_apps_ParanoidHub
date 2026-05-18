@@ -24,9 +24,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.core.net.toUri
 import com.android.settingslib.spa.debug.UiModePreviews
 import com.android.settingslib.spa.framework.theme.SettingsDimension
+import com.android.settingslib.spa.framework.theme.SettingsShape.CornerExtraSmall
 import com.android.settingslib.spa.framework.theme.SettingsShape.CornerExtraLarge1
-import com.android.settingslib.spa.framework.theme.SettingsShape.CornerExtraSmall2
-import com.android.settingslib.spa.framework.theme.SettingsSpace.small1
 import com.android.settingslib.spa.framework.theme.SettingsTheme
 import co.aospa.hub.R
 import co.aospa.hub.deviceinfo.DeviceInfoUtils
@@ -40,13 +39,13 @@ fun DeviceInfoActionButtons(modifier: Modifier = Modifier) {
             .fillMaxWidth()
             .clip(
                 CornerExtraLarge1.copy(
-                    topStart = CornerExtraSmall2.topStart,
-                    topEnd = CornerExtraSmall2.topEnd,
+                    topStart = CornerExtraSmall.topStart,
+                    topEnd = CornerExtraSmall.topEnd,
                 )
             )
             .background(MaterialTheme.colorScheme.surfaceContainer)
             .padding(SettingsDimension.itemPaddingAround),
-        horizontalArrangement = Arrangement.spacedBy(small1),
+        horizontalArrangement = Arrangement.spacedBy(SettingsDimension.paddingLarge),
     ) {
         val buttonColors = ButtonDefaults.textButtonColors(
             contentColor = MaterialTheme.colorScheme.onSurface,

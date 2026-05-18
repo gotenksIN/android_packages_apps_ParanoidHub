@@ -26,7 +26,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.android.settingslib.spa.debug.UiModePreviews
 import com.android.settingslib.spa.framework.theme.SettingsDimension
-import com.android.settingslib.spa.framework.theme.SettingsSpace
 import com.android.settingslib.spa.framework.theme.SettingsTheme
 import com.android.settingslib.spa.widget.scaffold.MoreOptionsAction
 import com.android.settingslib.spa.widget.scaffold.MoreOptionsScope
@@ -40,7 +39,7 @@ fun ActionBar(
         modifier = Modifier
             .fillMaxWidth()
             .padding(SettingsDimension.buttonPadding),
-        horizontalArrangement = Arrangement.spacedBy(SettingsSpace.extraSmall2),
+        horizontalArrangement = Arrangement.spacedBy(SettingsDimension.paddingExtraSmall),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         buttons.forEach { button ->

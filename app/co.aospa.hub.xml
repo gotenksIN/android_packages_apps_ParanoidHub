@@ -4,7 +4,7 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <permissions>
-    <privapp-permissions package="org.lineageos.updater">
+    <privapp-permissions package="co.aospa.hub">
         <permission name="android.permission.ACCESS_CACHE_FILESYSTEM"/>
         <permission name="android.permission.MANAGE_USERS" />
         <permission name="android.permission.REBOOT"/>

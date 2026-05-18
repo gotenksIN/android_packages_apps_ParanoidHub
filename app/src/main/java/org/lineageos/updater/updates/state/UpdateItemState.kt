@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater.updates.state
+package co.aospa.hub.updates.state
 
-import org.lineageos.updater.updates.action.UpdateActions
+import co.aospa.hub.updates.action.UpdateActions
 
 data class UpdateItemState(
     val downloadId: String,

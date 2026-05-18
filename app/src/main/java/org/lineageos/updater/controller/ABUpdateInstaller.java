@@ -2,7 +2,7 @@
  * SPDX-FileCopyrightText: The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.lineageos.updater.controller;
+package co.aospa.hub.controller;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -14,12 +14,12 @@ import android.util.Log;
 
 import androidx.preference.PreferenceManager;
 
-import org.lineageos.updater.UpdaterApplication;
-import org.lineageos.updater.data.Update;
-import org.lineageos.updater.data.UpdateStatus;
-import org.lineageos.updater.data.UserPreferencesRepository;
-import org.lineageos.updater.misc.Constants;
-import org.lineageos.updater.misc.Utils;
+import co.aospa.hub.UpdaterApplication;
+import co.aospa.hub.data.Update;
+import co.aospa.hub.data.UpdateStatus;
+import co.aospa.hub.data.UserPreferencesRepository;
+import co.aospa.hub.misc.Constants;
+import co.aospa.hub.misc.Utils;
 
 import java.io.BufferedReader;
 import java.io.File;

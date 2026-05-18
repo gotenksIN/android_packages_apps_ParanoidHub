@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater.preferences
+package co.aospa.hub.preferences
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.IntState
@@ -23,12 +23,12 @@ import com.android.settingslib.spa.widget.preference.SwitchPreferenceModel
 import com.android.settingslib.spa.widget.scaffold.RegularScaffold
 import com.android.settingslib.spa.widget.ui.Category
 import kotlinx.coroutines.launch
-import org.lineageos.updater.R
-import org.lineageos.updater.UpdaterApplication
-import org.lineageos.updater.data.CheckInterval
-import org.lineageos.updater.data.UserPreferencesRepository
-import org.lineageos.updater.deviceinfo.DeviceInfoUtils
-import org.lineageos.updater.util.BatteryMonitor
+import co.aospa.hub.R
+import co.aospa.hub.UpdaterApplication
+import co.aospa.hub.data.CheckInterval
+import co.aospa.hub.data.UserPreferencesRepository
+import co.aospa.hub.deviceinfo.DeviceInfoUtils
+import co.aospa.hub.util.BatteryMonitor
 import java.io.File
 
 @Composable

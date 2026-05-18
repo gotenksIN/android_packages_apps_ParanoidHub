@@ -2,7 +2,7 @@
  * SPDX-FileCopyrightText: The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.lineageos.updater;
+package co.aospa.hub;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -22,10 +22,10 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
 
-import org.lineageos.updater.controller.UpdaterController;
-import org.lineageos.updater.controller.UpdaterService;
-import org.lineageos.updater.data.Update;
-import org.lineageos.updater.misc.Utils;
+import co.aospa.hub.controller.UpdaterController;
+import co.aospa.hub.controller.UpdaterService;
+import co.aospa.hub.data.Update;
+import co.aospa.hub.misc.Utils;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;

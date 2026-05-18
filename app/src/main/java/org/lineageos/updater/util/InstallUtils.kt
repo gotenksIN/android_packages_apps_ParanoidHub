@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater.util
+package co.aospa.hub.util
 
-import org.lineageos.updater.data.Update
-import org.lineageos.updater.deviceinfo.DeviceInfoUtils
-import org.lineageos.updater.misc.Utils
+import co.aospa.hub.data.Update
+import co.aospa.hub.deviceinfo.DeviceInfoUtils
+import co.aospa.hub.misc.Utils
 import java.io.File
 
 object InstallUtils {

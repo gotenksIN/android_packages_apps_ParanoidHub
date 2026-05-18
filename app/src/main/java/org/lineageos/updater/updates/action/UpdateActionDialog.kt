@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater.updates.action
+package co.aospa.hub.updates.action
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -13,7 +13,7 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.AnnotatedString
 import com.android.settingslib.spa.widget.dialog.AlertDialogButton
 import com.android.settingslib.spa.widget.dialog.SettingsAlertDialogWithIcon
-import org.lineageos.updater.R
+import co.aospa.hub.R
 
 data class AlertDialogState(
     val onConfirm: () -> Unit = {},

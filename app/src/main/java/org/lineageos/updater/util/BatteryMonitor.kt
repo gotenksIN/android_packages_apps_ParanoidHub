@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater.util
+package co.aospa.hub.util
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -18,7 +18,7 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.stateIn
-import org.lineageos.updater.data.UserPreferencesRepository
+import co.aospa.hub.data.UserPreferencesRepository
 
 class BatteryMonitor(
     private val appContext: Context,

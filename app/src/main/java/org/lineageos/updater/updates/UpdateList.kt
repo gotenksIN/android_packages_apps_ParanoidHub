@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater.updates
+package co.aospa.hub.updates
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Column
@@ -18,10 +18,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import com.android.settingslib.spa.widget.preference.ZeroStatePreference
 import com.android.settingslib.spa.widget.ui.Category
-import org.lineageos.updater.R
-import org.lineageos.updater.ui.CollapseBar
-import org.lineageos.updater.updates.action.UpdateAction
-import org.lineageos.updater.updates.state.UpdateItemState
+import co.aospa.hub.R
+import co.aospa.hub.ui.CollapseBar
+import co.aospa.hub.updates.action.UpdateAction
+import co.aospa.hub.updates.state.UpdateItemState
 
 @Composable
 fun UpdateList(

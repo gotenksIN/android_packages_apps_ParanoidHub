@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater.deviceinfo.actions
+package co.aospa.hub.deviceinfo.actions
 
 import android.content.Intent
 import androidx.compose.foundation.background
@@ -27,8 +27,8 @@ import com.android.settingslib.spa.framework.theme.SettingsShape.CornerExtraLarg
 import com.android.settingslib.spa.framework.theme.SettingsShape.CornerExtraSmall2
 import com.android.settingslib.spa.framework.theme.SettingsSpace.small1
 import com.android.settingslib.spa.framework.theme.SettingsTheme
-import org.lineageos.updater.R
-import org.lineageos.updater.deviceinfo.DeviceInfoUtils
+import co.aospa.hub.R
+import co.aospa.hub.deviceinfo.DeviceInfoUtils
 
 @Composable
 fun DeviceInfoActionButtons(modifier: Modifier = Modifier) {

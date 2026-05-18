@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater.preferences
+package co.aospa.hub.preferences
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

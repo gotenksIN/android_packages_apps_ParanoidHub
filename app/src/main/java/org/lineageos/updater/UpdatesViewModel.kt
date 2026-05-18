@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater
+package co.aospa.hub
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
@@ -18,9 +18,9 @@ import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import org.lineageos.updater.data.Update
-import org.lineageos.updater.updatescheck.UpdatesCheckModel
-import org.lineageos.updater.updatescheck.UpdatesCheckState
+import co.aospa.hub.data.Update
+import co.aospa.hub.updatescheck.UpdatesCheckModel
+import co.aospa.hub.updatescheck.UpdatesCheckState
 
 class UpdatesViewModel(
     application: Application,

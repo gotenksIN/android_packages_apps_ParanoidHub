@@ -3,20 +3,20 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater.data
+package co.aospa.hub.data
 
 import android.util.Log
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.SerializationException
-import org.lineageos.updater.data.source.local.UpdatesLocalDataSource
-import org.lineageos.updater.data.source.network.UpdatesNetworkDataSource
-import org.lineageos.updater.data.source.network.toUpdate
-import org.lineageos.updater.deviceinfo.DeviceInfoUtils
-import org.lineageos.updater.misc.Utils
-import org.lineageos.updater.notifications.NotificationHelper
-import org.lineageos.updater.util.NetworkMonitor
+import co.aospa.hub.data.source.local.UpdatesLocalDataSource
+import co.aospa.hub.data.source.network.UpdatesNetworkDataSource
+import co.aospa.hub.data.source.network.toUpdate
+import co.aospa.hub.deviceinfo.DeviceInfoUtils
+import co.aospa.hub.misc.Utils
+import co.aospa.hub.notifications.NotificationHelper
+import co.aospa.hub.util.NetworkMonitor
 import java.io.IOException
 
 private const val TAG = "UpdatesRepository"

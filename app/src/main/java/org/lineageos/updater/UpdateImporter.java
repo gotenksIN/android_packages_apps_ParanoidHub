@@ -3,7 +3,7 @@
  * SPDX-FileCopyrightText: 2020-2022 SHIFT GmbH
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.lineageos.updater;
+package co.aospa.hub;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -12,10 +12,10 @@ import android.net.Uri;
 import android.os.ParcelFileDescriptor;
 import android.util.Log;
 
-import org.lineageos.updater.controller.UpdaterController;
-import org.lineageos.updater.data.Update;
-import org.lineageos.updater.data.UpdateStatus;
-import org.lineageos.updater.misc.Utils;
+import co.aospa.hub.controller.UpdaterController;
+import co.aospa.hub.data.Update;
+import co.aospa.hub.data.UpdateStatus;
+import co.aospa.hub.misc.Utils;
 
 import java.io.File;
 import java.io.FileInputStream;

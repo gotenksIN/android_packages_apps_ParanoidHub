@@ -3,22 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater
+package co.aospa.hub
 
 import android.app.Application
 import com.android.settingslib.spa.framework.common.SettingsPageProviderRepository
 import com.android.settingslib.spa.framework.common.SpaEnvironment
 import com.android.settingslib.spa.framework.common.SpaEnvironmentFactory
 import kotlinx.coroutines.MainScope
-import org.lineageos.updater.data.AppStateRepository
-import org.lineageos.updater.data.UpdatesRepository
-import org.lineageos.updater.data.UserPreferencesRepository
-import org.lineageos.updater.data.source.local.UpdatesDatabase
-import org.lineageos.updater.data.source.local.UpdatesLocalDataSource
-import org.lineageos.updater.data.source.network.UpdatesNetworkDataSource
-import org.lineageos.updater.notifications.NotificationHelper
-import org.lineageos.updater.util.BatteryMonitor
-import org.lineageos.updater.util.NetworkMonitor
+import co.aospa.hub.data.AppStateRepository
+import co.aospa.hub.data.UpdatesRepository
+import co.aospa.hub.data.UserPreferencesRepository
+import co.aospa.hub.data.source.local.UpdatesDatabase
+import co.aospa.hub.data.source.local.UpdatesLocalDataSource
+import co.aospa.hub.data.source.network.UpdatesNetworkDataSource
+import co.aospa.hub.notifications.NotificationHelper
+import co.aospa.hub.util.BatteryMonitor
+import co.aospa.hub.util.NetworkMonitor
 
 class UpdaterApplication : Application() {
     private val coroutineScope = MainScope()

@@ -2,7 +2,7 @@
  * SPDX-FileCopyrightText: The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.lineageos.updater.misc;
+package co.aospa.hub.misc;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,13 +12,13 @@ import android.util.Log;
 
 import androidx.preference.PreferenceManager;
 
-import org.lineageos.updater.R;
-import org.lineageos.updater.controller.UpdaterService;
-import org.lineageos.updater.data.UserPreferencesRepository;
-import org.lineageos.updater.data.Update;
-import org.lineageos.updater.data.source.local.UpdatesLocalDataSource;
-import org.lineageos.updater.data.source.local.UpdatesDatabase;
-import org.lineageos.updater.deviceinfo.DeviceInfoUtils;
+import co.aospa.hub.R;
+import co.aospa.hub.controller.UpdaterService;
+import co.aospa.hub.data.UserPreferencesRepository;
+import co.aospa.hub.data.Update;
+import co.aospa.hub.data.source.local.UpdatesLocalDataSource;
+import co.aospa.hub.data.source.local.UpdatesDatabase;
+import co.aospa.hub.deviceinfo.DeviceInfoUtils;
 
 import java.io.File;
 import java.io.IOException;

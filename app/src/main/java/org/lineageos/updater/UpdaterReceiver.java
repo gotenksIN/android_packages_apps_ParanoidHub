@@ -2,7 +2,7 @@
  * SPDX-FileCopyrightText: The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.lineageos.updater;
+package co.aospa.hub;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -12,16 +12,16 @@ import android.os.PowerManager;
 
 import androidx.preference.PreferenceManager;
 
-import org.lineageos.updater.controller.UpdaterService;
-import org.lineageos.updater.deviceinfo.DeviceInfoUtils;
-import org.lineageos.updater.misc.Constants;
-import org.lineageos.updater.misc.Utils;
-import org.lineageos.updater.updatescheck.UpdatesCheckWorker;
+import co.aospa.hub.controller.UpdaterService;
+import co.aospa.hub.deviceinfo.DeviceInfoUtils;
+import co.aospa.hub.misc.Constants;
+import co.aospa.hub.misc.Utils;
+import co.aospa.hub.updatescheck.UpdatesCheckWorker;
 
 public class UpdaterReceiver extends BroadcastReceiver {
 
     public static final String ACTION_INSTALL_REBOOT =
-            "org.lineageos.updater.action.INSTALL_REBOOT";
+            "co.aospa.hub.action.INSTALL_REBOOT";
 
     private static boolean isUpdateSuccessful(Context context) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);

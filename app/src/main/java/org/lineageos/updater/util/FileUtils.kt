@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater.util
+package co.aospa.hub.util
 
 import android.content.ContentResolver
 import android.net.Uri

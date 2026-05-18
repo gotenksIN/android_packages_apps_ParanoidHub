@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater.misc
+package co.aospa.hub.misc
 
 object Constants {
 

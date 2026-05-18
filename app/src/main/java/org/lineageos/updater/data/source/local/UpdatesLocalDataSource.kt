@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater.data.source.local
+package co.aospa.hub.data.source.local
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import org.lineageos.updater.data.Update
-import org.lineageos.updater.data.UpdateStatus
+import co.aospa.hub.data.Update
+import co.aospa.hub.data.UpdateStatus
 
 class UpdatesLocalDataSource(private val updateDao: UpdateDao) {
     fun getUpdates(): List<Update> = updateDao.getUpdates().map { it.toUpdate() }

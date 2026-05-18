@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater.deviceinfo.actions
+package co.aospa.hub.deviceinfo.actions
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -20,7 +20,7 @@ import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.android.settingslib.qrcode.QrCodeGenerator
-import org.lineageos.updater.R
+import co.aospa.hub.R
 
 private val QrCodeSize = 200.dp
 

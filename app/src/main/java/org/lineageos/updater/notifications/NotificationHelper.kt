@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater.notifications
+package co.aospa.hub.notifications
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -12,10 +12,10 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import androidx.core.content.getSystemService
-import org.lineageos.updater.R
-import org.lineageos.updater.UpdatesActivity
-import org.lineageos.updater.deviceinfo.DeviceInfoUtils
-import org.lineageos.updater.util.StringUtil
+import co.aospa.hub.R
+import co.aospa.hub.UpdatesActivity
+import co.aospa.hub.deviceinfo.DeviceInfoUtils
+import co.aospa.hub.util.StringUtil
 import java.time.format.FormatStyle
 
 class NotificationHelper(context: Context) {

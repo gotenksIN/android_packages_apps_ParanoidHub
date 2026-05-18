@@ -2,7 +2,7 @@
  * SPDX-FileCopyrightText: The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.lineageos.updater.controller;
+package co.aospa.hub.controller;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -11,14 +11,14 @@ import android.os.PowerManager;
 import android.os.SystemClock;
 import android.util.Log;
 
-import org.lineageos.updater.UpdaterApplication;
-import org.lineageos.updater.data.Update;
-import org.lineageos.updater.data.UpdateStatus;
-import org.lineageos.updater.data.UserPreferencesRepository;
-import org.lineageos.updater.data.source.local.UpdatesLocalDataSource;
-import org.lineageos.updater.data.source.local.UpdatesDatabase;
-import org.lineageos.updater.download.DownloadClient;
-import org.lineageos.updater.misc.Utils;
+import co.aospa.hub.UpdaterApplication;
+import co.aospa.hub.data.Update;
+import co.aospa.hub.data.UpdateStatus;
+import co.aospa.hub.data.UserPreferencesRepository;
+import co.aospa.hub.data.source.local.UpdatesLocalDataSource;
+import co.aospa.hub.data.source.local.UpdatesDatabase;
+import co.aospa.hub.download.DownloadClient;
+import co.aospa.hub.misc.Utils;
 
 import java.io.File;
 import java.io.IOException;

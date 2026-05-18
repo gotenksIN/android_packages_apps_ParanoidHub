@@ -3,15 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater.deviceinfo
+package co.aospa.hub.deviceinfo
 
 import android.content.res.Configuration
 import android.icu.text.DateFormat
 import android.icu.util.TimeZone
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.runtime.Composable
@@ -25,9 +23,8 @@ import com.android.settingslib.spa.framework.theme.SettingsDimension
 import com.android.settingslib.spa.framework.theme.SettingsRadius
 import com.android.settingslib.spa.framework.theme.SettingsShape.CornerExtraLarge1
 import com.android.settingslib.spa.framework.theme.SettingsTheme
-import org.lineageos.updater.deviceinfo.actions.DeviceInfoActionButtons
-import org.lineageos.updater.deviceinfo.actions.DeviceInfoTvAction
-import org.lineageos.updater.util.StringUtil
+import co.aospa.hub.deviceinfo.actions.DeviceInfoTvAction
+import co.aospa.hub.util.StringUtil
 import java.time.LocalDate
 import java.time.ZoneOffset
 import java.util.Date
@@ -92,10 +89,7 @@ fun DeviceInfoBanner(
             },
         )
 
-        if (!isTv) {
-            Spacer(modifier = Modifier.height(SettingsDimension.paddingTiny))
-            DeviceInfoActionButtons()
-        } else {
+        if (isTv) {
             DeviceInfoTvAction()
         }
     }

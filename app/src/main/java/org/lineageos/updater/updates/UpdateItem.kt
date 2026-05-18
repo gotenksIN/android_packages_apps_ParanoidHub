@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater.updates
+package co.aospa.hub.updates
 
 import android.content.Context
 import androidx.compose.animation.AnimatedVisibility
@@ -39,13 +39,13 @@ import com.android.settingslib.spa.framework.theme.SettingsTheme
 import com.android.settingslib.spa.widget.preference.Preference
 import com.android.settingslib.spa.widget.preference.PreferenceModel
 import com.android.settingslib.spa.widget.ui.LinearProgressBar
-import org.lineageos.updater.updates.action.UpdateAction
-import org.lineageos.updater.updates.action.UpdateActionType
-import org.lineageos.updater.updates.action.UpdateActions
-import org.lineageos.updater.updates.button.ActionBar
-import org.lineageos.updater.updates.button.ActionBarButton
-import org.lineageos.updater.updates.state.ProgressState
-import org.lineageos.updater.updates.state.UpdateItemState
+import co.aospa.hub.updates.action.UpdateAction
+import co.aospa.hub.updates.action.UpdateActionType
+import co.aospa.hub.updates.action.UpdateActions
+import co.aospa.hub.updates.button.ActionBar
+import co.aospa.hub.updates.button.ActionBarButton
+import co.aospa.hub.updates.state.ProgressState
+import co.aospa.hub.updates.state.UpdateItemState
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable

@@ -2,7 +2,7 @@
  * SPDX-FileCopyrightText: The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.lineageos.updater.download;
+package co.aospa.hub.download;
 
 import android.os.SystemClock;
 import android.util.Log;

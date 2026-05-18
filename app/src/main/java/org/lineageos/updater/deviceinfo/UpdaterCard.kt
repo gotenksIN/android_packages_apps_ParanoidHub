@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater.deviceinfo
+package co.aospa.hub.deviceinfo
 
 import android.graphics.RuntimeShader
 import androidx.compose.foundation.Image
@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -26,7 +27,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawWithCache
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.ShaderBrush
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.toArgb
@@ -44,18 +44,9 @@ import com.android.settingslib.spa.framework.theme.SettingsDimension
 import com.android.settingslib.spa.framework.theme.SettingsShape.CornerExtraLarge1
 import com.android.settingslib.spa.framework.theme.SettingsSpace
 import com.android.settingslib.spa.framework.theme.SettingsTheme
-import org.lineageos.updater.R
+import co.aospa.hub.R
 import kotlin.math.max
 import kotlin.math.roundToInt
-
-// Brand guide: "Mark height based on text x-height". Approximate Roboto x-height from font size.
-private const val MARK_X_HEIGHT_RATIO = 0.55f
-
-// Brand guide: "Do not warp, transform". Derive width from height to keep logo proportions.
-private const val MARK_WIDTH_MULTIPLIER = 2.5f
-
-// Brand guide: "higher numbers' lower edges". Scale the gap from the mark, not a fixed dp.
-private const val VERSION_MARK_SPACING_RATIO = 0.10f
 
 // Pattern: preferred circle radius before snapping the pattern to the card height.
 private const val PATTERN_BASE_RADIUS_DP = 25
@@ -219,10 +210,9 @@ fun UpdaterCard(
         )
     }
 
-    val markHeight = remember(versionStyle, density) {
-        with(density) { (versionStyle.fontSize.toPx() * MARK_X_HEIGHT_RATIO).toDp() }
+    val markSize = remember(versionStyle, density) {
+        with(density) { versionStyle.fontSize.toDp() }
     }
-    val markWidth = markHeight * MARK_WIDTH_MULTIPLIER
 
     Card(
         modifier = modifier.fillMaxWidth(),
@@ -248,17 +238,15 @@ fun UpdaterCard(
                         .padding(SettingsDimension.paddingLarge),
                 ) {
                     Image(
-                        painter = painterResource(R.drawable.lineage_mark_tight),
+                        painter = painterResource(R.drawable.paranoid_android_logo),
                         contentDescription = stringResource(R.string.brand_name),
                         modifier = Modifier
-                            .width(markWidth)
+                            .size(markSize)
                             .alignBy { it.measuredHeight },
-                        contentScale = ContentScale.FillWidth,
-                        // Brand guide: "Use white when on dark backgrounds".
-                        colorFilter = ColorFilter.tint(onBrandColor),
+                        contentScale = ContentScale.Fit,
                     )
 
-                    Spacer(modifier = Modifier.width(markWidth * VERSION_MARK_SPACING_RATIO))
+                    Spacer(modifier = Modifier.width(SettingsDimension.paddingExtraSmall6))
 
                     Text(
                         text = buildVersion,
@@ -281,14 +269,17 @@ fun UpdaterCard(
                     InfoColumn(
                         label = stringResource(R.string.header_build_version, buildVersion),
                         value = stringResource(R.string.header_android_version, androidVersion),
+                        modifier = Modifier.weight(1f),
                     )
                     InfoColumn(
                         label = stringResource(R.string.build_date),
                         value = buildDate,
+                        modifier = Modifier.weight(1f),
                     )
                     InfoColumn(
                         label = stringResource(R.string.security_update),
                         value = securityPatch,
+                        modifier = Modifier.weight(1f),
                     )
                 }
             }
@@ -327,8 +318,10 @@ private fun Modifier.updaterHeaderPattern(
 private fun InfoColumn(
     label: String,
     value: String,
+    modifier: Modifier = Modifier,
 ) {
     Column(
+        modifier = modifier,
         verticalArrangement = Arrangement.spacedBy(SettingsSpace.extraSmall2),
     ) {
         Text(

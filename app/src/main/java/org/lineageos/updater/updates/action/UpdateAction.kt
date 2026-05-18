@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater.updates.action
+package co.aospa.hub.updates.action
 
 import android.content.Context
 import androidx.annotation.StringRes
-import org.lineageos.updater.R
+import co.aospa.hub.R
 
 enum class UpdateActionType(@param:StringRes val titleRes: Int) {
     START_DOWNLOAD(R.string.action_download),
@@ -26,8 +26,7 @@ enum class UpdateActionType(@param:StringRes val titleRes: Int) {
     DELETE(R.string.menu_delete_update),
     EXPORT(R.string.menu_export_update),
     VIEW_DOWNLOADS(R.string.menu_view_downloads) {
-        override fun title(context: Context) =
-            context.getString(titleRes, context.getString(R.string.brand_name))
+        override fun title(context: Context) = context.getString(titleRes)
     };
 
     open fun title(context: Context) = context.getString(titleRes)

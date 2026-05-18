@@ -1,9 +1,10 @@
 /*
  * SPDX-FileCopyrightText: The LineageOS Project
+ * SPDX-FileCopyrightText: The Paranoid Android Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater
+package co.aospa.hub
 
 import android.content.Intent
 import android.os.Bundle
@@ -35,6 +36,7 @@ import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.core.net.toUri
 import com.android.settingslib.spa.framework.compose.LocalNavController
 import com.android.settingslib.spa.framework.compose.NavControllerWrapper
 import com.android.settingslib.spa.framework.theme.SettingsTheme
@@ -42,19 +44,19 @@ import com.android.settingslib.spa.widget.preference.Preference
 import com.android.settingslib.spa.widget.preference.PreferenceModel
 import com.android.settingslib.spa.widget.scaffold.SettingsScaffold
 import com.android.settingslib.spa.widget.ui.Category
-import org.lineageos.updater.controller.UpdaterController
-import org.lineageos.updater.data.Update
-import org.lineageos.updater.data.UpdateStatus
-import org.lineageos.updater.deviceinfo.DeviceInfoBanner
-import org.lineageos.updater.preferences.PreferencesActivity
-import org.lineageos.updater.updates.UpdateList
-import org.lineageos.updater.updates.action.AlertDialogState
-import org.lineageos.updater.updates.action.UpdateActionDialog
-import org.lineageos.updater.updates.action.UpdateActionHandler
-import org.lineageos.updater.updates.state.UpdateItemStateMapper
-import org.lineageos.updater.updatescheck.UpdatesCheck
-import org.lineageos.updater.updatescheck.UpdatesCheckModel
-import org.lineageos.updater.updatescheck.UpdatesCheckState
+import co.aospa.hub.controller.UpdaterController
+import co.aospa.hub.data.Update
+import co.aospa.hub.data.UpdateStatus
+import co.aospa.hub.deviceinfo.DeviceInfoBanner
+import co.aospa.hub.preferences.PreferencesActivity
+import co.aospa.hub.updates.UpdateList
+import co.aospa.hub.updates.action.AlertDialogState
+import co.aospa.hub.updates.action.UpdateActionDialog
+import co.aospa.hub.updates.action.UpdateActionHandler
+import co.aospa.hub.updates.state.UpdateItemStateMapper
+import co.aospa.hub.updatescheck.UpdatesCheck
+import co.aospa.hub.updatescheck.UpdatesCheckModel
+import co.aospa.hub.updatescheck.UpdatesCheckState
 
 abstract class UpdatesScaffoldActivity : ComponentActivity() {
     private val viewModel by viewModels<UpdatesViewModel>()
@@ -339,6 +341,8 @@ private fun UpdatesFooter(
 ) {
     val localUpdateSummary = stringResource(R.string.local_update_import_summary)
     val preferencesSummary = stringResource(R.string.preferences_summary)
+    val reportIssuesSummary = stringResource(R.string.found_bug)
+    val context = androidx.compose.ui.platform.LocalContext.current
 
     Category {
         Preference(object : PreferenceModel {
@@ -350,6 +354,15 @@ private fun UpdatesFooter(
             override val title = stringResource(R.string.menu_preferences)
             override val summary = { preferencesSummary }
             override val onClick = onPreferencesClick
+        })
+        Preference(object : PreferenceModel {
+            override val title = stringResource(R.string.report_issues)
+            override val summary = { reportIssuesSummary }
+            override val onClick = {
+                context.startActivity(
+                    Intent(Intent.ACTION_VIEW, context.getString(R.string.report_issue_url).toUri())
+                )
+            }
         })
     }
 }

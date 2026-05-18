@@ -2,7 +2,7 @@
  * SPDX-FileCopyrightText: The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.lineageos.updater.controller;
+package co.aospa.hub.controller;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -21,16 +21,16 @@ import android.util.Log;
 
 import androidx.core.app.NotificationCompat;
 
-import org.lineageos.updater.R;
-import org.lineageos.updater.UpdaterApplication;
-import org.lineageos.updater.UpdaterReceiver;
-import org.lineageos.updater.UpdatesActivity;
-import org.lineageos.updater.data.Update;
-import org.lineageos.updater.data.UpdateStatus;
-import org.lineageos.updater.data.UserPreferencesRepository;
-import org.lineageos.updater.util.StringUtil;
-import org.lineageos.updater.misc.Utils;
-import org.lineageos.updater.notifications.NotificationHelper;
+import co.aospa.hub.R;
+import co.aospa.hub.UpdaterApplication;
+import co.aospa.hub.UpdaterReceiver;
+import co.aospa.hub.UpdatesActivity;
+import co.aospa.hub.data.Update;
+import co.aospa.hub.data.UpdateStatus;
+import co.aospa.hub.data.UserPreferencesRepository;
+import co.aospa.hub.util.StringUtil;
+import co.aospa.hub.misc.Utils;
+import co.aospa.hub.notifications.NotificationHelper;
 
 import java.io.IOException;
 import java.time.format.FormatStyle;

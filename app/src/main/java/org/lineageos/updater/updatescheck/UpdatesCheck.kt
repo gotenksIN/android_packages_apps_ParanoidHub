@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater.updatescheck
+package co.aospa.hub.updatescheck
 
 import android.content.Context
 import android.os.SystemClock
@@ -38,7 +38,7 @@ import com.android.settingslib.spa.framework.theme.SettingsDimension
 import com.android.settingslib.spa.widget.ui.Lottie
 import com.android.settingslib.spa.widget.ui.SettingsBody
 import kotlinx.coroutines.delay
-import org.lineageos.updater.R
+import co.aospa.hub.R
 import java.util.Date
 
 private const val MIN_CHECKING_DURATION_MILLIS = 2_000L

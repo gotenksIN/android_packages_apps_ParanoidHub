@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater.data
+package co.aospa.hub.data
 
 import android.content.Context
 import androidx.datastore.core.DataStore
@@ -19,8 +19,8 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.runBlocking
-import org.lineageos.updater.deviceinfo.DeviceInfoUtils
-import org.lineageos.updater.updatescheck.UpdatesCheckWorker
+import co.aospa.hub.deviceinfo.DeviceInfoUtils
+import co.aospa.hub.updatescheck.UpdatesCheckWorker
 import java.io.IOException
 
 private const val USER_PREFERENCES_DATASTORE_NAME = "user_prefs"

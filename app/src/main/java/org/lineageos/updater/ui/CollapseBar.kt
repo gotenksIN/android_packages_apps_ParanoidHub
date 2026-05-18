@@ -6,7 +6,7 @@
 
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package org.lineageos.updater.ui
+package co.aospa.hub.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -32,7 +32,7 @@ import com.android.settingslib.spa.debug.UiModePreviews
 import com.android.settingslib.spa.framework.theme.SettingsDimension
 import com.android.settingslib.spa.framework.theme.SettingsSpace
 import com.android.settingslib.spa.framework.theme.SettingsTheme
-import org.lineageos.updater.R
+import co.aospa.hub.R
 
 /**
  * Local copy of SettingsLib's private CollapseBar so Updater can reuse the same expand/collapse

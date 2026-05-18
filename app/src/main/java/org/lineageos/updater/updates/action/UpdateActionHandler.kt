@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater.updates.action
+package co.aospa.hub.updates.action
 
 import android.app.Activity
 import android.content.Intent
@@ -14,16 +14,16 @@ import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.core.net.toUri
-import org.lineageos.updater.R
-import org.lineageos.updater.UpdaterApplication
-import org.lineageos.updater.controller.UpdaterController
-import org.lineageos.updater.controller.UpdaterService
-import org.lineageos.updater.data.Update
-import org.lineageos.updater.deviceinfo.DeviceInfoUtils
-import org.lineageos.updater.misc.Utils
-import org.lineageos.updater.util.BatteryMonitor.BatteryState
-import org.lineageos.updater.util.InstallUtils
-import org.lineageos.updater.util.StringUtil
+import co.aospa.hub.R
+import co.aospa.hub.UpdaterApplication
+import co.aospa.hub.controller.UpdaterController
+import co.aospa.hub.controller.UpdaterService
+import co.aospa.hub.data.Update
+import co.aospa.hub.deviceinfo.DeviceInfoUtils
+import co.aospa.hub.misc.Utils
+import co.aospa.hub.util.BatteryMonitor.BatteryState
+import co.aospa.hub.util.InstallUtils
+import co.aospa.hub.util.StringUtil
 import java.time.format.FormatStyle
 
 class UpdateActionHandler(

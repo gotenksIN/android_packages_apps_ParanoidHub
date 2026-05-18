@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater.data
+package co.aospa.hub.data
 
 import android.content.Context
 import androidx.datastore.core.DataStore
@@ -15,7 +15,7 @@ import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import org.lineageos.updater.deviceinfo.DeviceInfoUtils
+import co.aospa.hub.deviceinfo.DeviceInfoUtils
 import kotlin.time.Duration.Companion.seconds
 
 private const val APP_STATE_DATASTORE_NAME = "app_state"

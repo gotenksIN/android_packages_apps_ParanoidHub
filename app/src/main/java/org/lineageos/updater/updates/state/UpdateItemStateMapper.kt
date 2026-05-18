@@ -3,19 +3,19 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater.updates.state
+package co.aospa.hub.updates.state
 
 import android.content.Context
 import android.text.format.Formatter
-import org.lineageos.updater.R
-import org.lineageos.updater.controller.UpdaterController
-import org.lineageos.updater.data.Update
-import org.lineageos.updater.data.UpdateStatus
-import org.lineageos.updater.updates.action.UpdateAction
-import org.lineageos.updater.updates.action.UpdateActionType
-import org.lineageos.updater.updates.action.UpdateActions
-import org.lineageos.updater.util.NetworkMonitor.NetworkState
-import org.lineageos.updater.util.StringUtil
+import co.aospa.hub.R
+import co.aospa.hub.controller.UpdaterController
+import co.aospa.hub.data.Update
+import co.aospa.hub.data.UpdateStatus
+import co.aospa.hub.updates.action.UpdateAction
+import co.aospa.hub.updates.action.UpdateActionType
+import co.aospa.hub.updates.action.UpdateActions
+import co.aospa.hub.util.NetworkMonitor.NetworkState
+import co.aospa.hub.util.StringUtil
 import java.time.format.FormatStyle
 
 class UpdateItemStateMapper(

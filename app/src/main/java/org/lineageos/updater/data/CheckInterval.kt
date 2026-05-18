@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater.data
+package co.aospa.hub.data
 
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.days

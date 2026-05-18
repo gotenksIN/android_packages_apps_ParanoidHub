@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater.deviceinfo.actions
+package co.aospa.hub.deviceinfo.actions
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -21,7 +21,7 @@ import com.android.settingslib.spa.debug.UiModePreviews
 import com.android.settingslib.spa.framework.theme.SettingsDimension
 import com.android.settingslib.spa.framework.theme.SettingsTheme
 import com.android.settingslib.spa.widget.ui.SettingsBody
-import org.lineageos.updater.R
+import co.aospa.hub.R
 
 @Composable
 fun DeviceInfoTvAction(modifier: Modifier = Modifier) {

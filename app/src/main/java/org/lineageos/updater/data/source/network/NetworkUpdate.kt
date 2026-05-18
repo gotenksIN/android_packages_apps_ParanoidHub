@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater.data.source.network
+package co.aospa.hub.data.source.network
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import org.lineageos.updater.data.Update
+import co.aospa.hub.data.Update
 
 @Suppress("PROVIDED_RUNTIME_TOO_LOW")
 @Serializable

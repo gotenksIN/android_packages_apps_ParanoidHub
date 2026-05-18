@@ -4,7 +4,7 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <exceptions>
-    <exception package="org.lineageos.updater">
+    <exception package="co.aospa.hub">
         <!-- Notifications -->
         <permission name="android.permission.POST_NOTIFICATIONS" fixed="false"/>
     </exception>

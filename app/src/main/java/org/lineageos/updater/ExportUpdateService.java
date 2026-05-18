@@ -2,7 +2,7 @@
  * SPDX-FileCopyrightText: The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.lineageos.updater;
+package co.aospa.hub;
 
 import android.app.NotificationManager;
 import android.app.Service;
@@ -16,8 +16,8 @@ import android.widget.Toast;
 
 import androidx.core.app.NotificationCompat;
 
-import org.lineageos.updater.util.FileUtils;
-import org.lineageos.updater.notifications.NotificationHelper;
+import co.aospa.hub.util.FileUtils;
+import co.aospa.hub.notifications.NotificationHelper;
 
 import java.io.File;
 import java.io.IOException;

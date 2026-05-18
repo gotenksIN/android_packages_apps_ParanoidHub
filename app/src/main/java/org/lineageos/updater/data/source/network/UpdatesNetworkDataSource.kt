@@ -2,14 +2,14 @@
  * SPDX-FileCopyrightText: The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.lineageos.updater.data.source.network
+package co.aospa.hub.data.source.network
 
 import android.content.Context
 import kotlinx.serialization.json.Json
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import org.lineageos.updater.R
-import org.lineageos.updater.deviceinfo.DeviceInfoUtils
+import co.aospa.hub.R
+import co.aospa.hub.deviceinfo.DeviceInfoUtils
 import java.io.IOException
 import java.util.concurrent.TimeUnit
 

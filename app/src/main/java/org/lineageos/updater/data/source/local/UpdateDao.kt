@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater.data.source.local
+package co.aospa.hub.data.source.local
 
 import androidx.room.Dao
 import androidx.room.Insert

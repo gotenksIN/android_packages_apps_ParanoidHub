@@ -3,15 +3,15 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.updater.updates.state
+package co.aospa.hub.updates.state
 
 import androidx.annotation.StringRes
-import org.lineageos.updater.R
-import org.lineageos.updater.controller.UpdaterController
-import org.lineageos.updater.data.Update
-import org.lineageos.updater.data.UpdateStatus
-import org.lineageos.updater.deviceinfo.DeviceInfoUtils
-import org.lineageos.updater.util.InstallUtils
+import co.aospa.hub.R
+import co.aospa.hub.controller.UpdaterController
+import co.aospa.hub.data.Update
+import co.aospa.hub.data.UpdateStatus
+import co.aospa.hub.deviceinfo.DeviceInfoUtils
+import co.aospa.hub.util.InstallUtils
 
 enum class UpdateOperationPhase(
     @param:StringRes val titleRes: Int? = null,

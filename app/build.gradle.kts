@@ -1,5 +1,6 @@
 /*
  * SPDX-FileCopyrightText: The LineageOS Project
+ * SPDX-FileCopyrightText: The Paranoid Android Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -98,6 +99,8 @@ configurations.all {
     // external/kotlinx.serialization/bom
     exclude(group = "org.jetbrains.kotlinx", module = "kotlinx-coroutines-bom")
     exclude(group = "org.jetbrains.kotlinx", module = "kotlinx-serialization-bom")
+    // Not available as an AOSP Soong prebuilt in android16-release.
+    exclude(group = "androidx.compose.runtime", module = "runtime-annotation")
 }
 
 dependencies {
